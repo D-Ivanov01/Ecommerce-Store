@@ -1,0 +1,15 @@
+#product-image {
+    max-width: 100%; /* Make the image responsive */
+    max-height: 250px; /* Set the maximum height of the image */
+    object-fit: fill;
+  }
+  .add-to-basket {
+        display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    padding: 8px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: -55px;
+  }
