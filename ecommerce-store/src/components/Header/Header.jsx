@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -34,8 +34,6 @@ const navItems = ['IOS', 'Android', 'UIO'];
 const Header =  (props) => {
   const { window } = props
   const [cartCount, setCartCount] = useState(getCartCount()); // Initialize with initial value
-
-  console.log(cartCount);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const filteredProducts = selectedCategory
@@ -178,5 +176,9 @@ const Header =  (props) => {
   );
   
 }
+
+Header.propTypes = {
+  window: PropTypes.func,
+};
 
 export default Header
