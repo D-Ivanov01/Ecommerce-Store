@@ -135,11 +135,10 @@ const Header =  (props) => {
               </Button>
             ))}
           </Box>
-          <IconButton id='shoping-cart'>
+          <IconButton id='shopping-cart'>
             <Badge badgeContent={cartCount} color="error" >
               <ShoppingCartIcon />
             </Badge>
-            
           </IconButton>
         </Toolbar>
       </AppBar>
