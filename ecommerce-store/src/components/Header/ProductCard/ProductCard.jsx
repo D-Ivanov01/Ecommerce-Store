@@ -1,15 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia'; // Import CardMedia for displaying images
+import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { increaseCartCount } from '../../../services/shoppingCart.services';
 import './ProductCard.css';
 
-const ProductCard = ({ product }) => {
+
+const ProductCard = ({ product , cartCount, updateCartCount}) => {
+
+  const handleAddToCart = () => {
+    increaseCartCount();
+    updateCartCount(); // Notify the parent component of the cart count update
+  };
+
   return (
-    <Card id="product-card" square>
+    <Card id="product-cart" square>
       <CardMedia 
       id='product-image '
         component="img"
@@ -23,7 +32,7 @@ const ProductCard = ({ product }) => {
         </Typography>
       </CardContent>
       <div className="add-to-basket">
-        <IconButton aria-label='add to shopping cart' size='medium'>
+        <IconButton aria-label='add to shopping cart' size='medium' onClick={handleAddToCart}>
           <AddShoppingCartIcon  fontSize='small'/>
         </IconButton>
       </div>
@@ -31,4 +40,9 @@ const ProductCard = ({ product }) => {
   );
 };
 
+ProductCard.propTypes = {
+  product: PropTypes.object.isRequired,
+  cartCount: PropTypes.number.isRequired,
+  updateCartCount: PropTypes.func.isRequired,
+};
 export default ProductCard;

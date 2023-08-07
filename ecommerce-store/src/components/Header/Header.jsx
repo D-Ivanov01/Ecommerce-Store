@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -20,7 +20,12 @@ import ProductCard from './ProductCard/ProductCard.jsx';
 import productsData from '../../data/product.json'
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
 import './Header.css'
+import { getCartCount } from '../../services/shoppingCart.services.js';
+import { increaseCartCount } from '../../services/shoppingCart.services.js';
+
 
 const drawerWidth = 250;
 const navItems = ['IOS', 'Android', 'UIO'];
@@ -28,6 +33,9 @@ const navItems = ['IOS', 'Android', 'UIO'];
 
 const Header =  (props) => {
   const { window } = props
+  const [cartCount, setCartCount] = useState(getCartCount()); // Initialize with initial value
+
+  console.log(cartCount);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const filteredProducts = selectedCategory
@@ -47,6 +55,11 @@ const Header =  (props) => {
   // Handle logo click to reset the filtered data
   const handleLogoClick = () => {
     setSelectedCategory(null);
+  };
+
+  const handleAddToCart = () => {
+    increaseCartCount();
+    setCartCount((prevCartCount) => prevCartCount + 1); // Update the cart count state
   };
 
 
@@ -124,6 +137,12 @@ const Header =  (props) => {
               </Button>
             ))}
           </Box>
+          <IconButton id='shoping-cart'>
+            <Badge badgeContent={cartCount} color="error" >
+              <ShoppingCartIcon />
+            </Badge>
+            
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Box component="nav">
@@ -148,7 +167,9 @@ const Header =  (props) => {
         <Grid container spacing={4} >
           {filteredProducts.map(product => (
             <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-              <ProductCard product={product} />
+              <ProductCard product={product} 
+              cartCount={cartCount} // Pass the cartCount state as prop
+              updateCartCount={handleAddToCart}/>
             </Grid>
           ))}
         </Grid>
