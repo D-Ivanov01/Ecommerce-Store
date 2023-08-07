@@ -9,8 +9,17 @@
     margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+
+#product-container{
+    margin-top: 12rem;
+}
+
+@media (max-width: 599px) {
     #shopping-cart{
         margin-left: auto; 
+    }
+
+    #product-container{
+        max-width: 300px;
     }
 }

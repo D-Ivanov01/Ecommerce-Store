@@ -160,7 +160,7 @@ const Header =  (props) => {
         </Drawer>
       </Box>
       {/* Render the filtered products using Grid */}
-      <Container sx={{ mt: '10rem' }}>
+      <Container id = "product-container">
         <Grid container spacing={4} >
           {filteredProducts.map(product => (
             <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
