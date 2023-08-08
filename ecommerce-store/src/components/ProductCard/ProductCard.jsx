@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect, useState }from 'react';
 import PropTypes from 'prop-types'; 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -7,10 +7,22 @@ import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { increaseCartCount } from '../../services/shoppingCart.services';
+import ProductRating from '../ProductRating/ProductRating';
 import './ProductCard.css';
 
 
 const ProductCard = ({ product , cartCount, updateCartCount}) => {
+
+  const [rating, setRating] = useState(() => {
+    // Get the stored rating from local storage or set it to 0 if not available
+    const storedRating = localStorage.getItem(`rating_${product.id}`);
+    return storedRating ? parseFloat(storedRating) : 0;
+  });
+
+  useEffect(() => {
+    // Store the rating in local storage whenever it changes
+    localStorage.setItem(`rating_${product.id}`, rating);
+  }, [rating, product.id]);
 
   const handleAddToCart = () => {
     increaseCartCount();
@@ -30,6 +42,7 @@ const ProductCard = ({ product , cartCount, updateCartCount}) => {
         <Typography variant="subtitle1" color="textSecondary">
           Price: ${product.price} {/* Display the price with two decimal places */}
         </Typography>
+        <ProductRating value={rating} onChange={setRating} />
       </CardContent>
       <div className="add-to-basket">
         <IconButton aria-label='add to shopping cart' size='medium' onClick={handleAddToCart}>
