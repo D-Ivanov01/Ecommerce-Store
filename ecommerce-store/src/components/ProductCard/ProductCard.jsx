@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { increaseCartCount } from '../../../services/shoppingCart.services';
+import { increaseCartCount } from '../../services/shoppingCart.services';
 import './ProductCard.css';
 
 
