@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 
-export default function BasicRating() {
+const ProductRating = ()=> {
   const [value, setValue] = React.useState(0);
 
   return (
@@ -16,4 +16,6 @@ export default function BasicRating() {
       />
     </Box>
   );
-}
+};
+
+export default ProductRating;
