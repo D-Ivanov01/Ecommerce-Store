@@ -6,7 +6,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { increaseCartCount } from '../../services/shoppingCart.services';
 import ProductRating from '../ProductRating/ProductRating';
 import './ProductCard.css';
 
@@ -24,7 +23,6 @@ const ProductCard = ({ product , updateCartCount}) => {
   }, [rating, product.id]);
 
   const handleAddToCart = () => {
-    increaseCartCount();
     updateCartCount(); // Notify the parent component of the cart count update
   };
 
@@ -54,7 +52,6 @@ const ProductCard = ({ product , updateCartCount}) => {
 
 ProductCard.propTypes = {
   product: PropTypes.object.isRequired,
-  cartCount: PropTypes.number.isRequired,
   updateCartCount: PropTypes.func.isRequired,
 };
 export default ProductCard;

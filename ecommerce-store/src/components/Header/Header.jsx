@@ -15,42 +15,24 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { filterProductsByCategory } from '../../services/product.service.js';
-import ProductCard from '../ProductCard/ProductCard.jsx';
-import productsData from '../../data/product.json'
-import { Container } from '@mui/material';
-import Grid from '@mui/material/Grid';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import './Header.css'
 import { getCartCount } from '../../services/shoppingCart.services.js';
-import { increaseCartCount } from '../../services/shoppingCart.services.js';
-import Alert from '@mui/material/Alert';
+import ProductGrid from '../ProductGrid/ProductGrid.jsx';
+import './Header.css'
 
 
 const drawerWidth = 250;
-const navItems = ['IOS', 'Android', 'UIO'];
+const navItems = ['IOS', 'Android', 'EMUI'];
 
 
 const Header =  (props) => {
   const { window } = props
-  const [cartCount, setCartCount] = useState(getCartCount()); // Initialize with initial value
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(getCartCount());
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [showAlert, setShowAlert] = useState(false);
-   const [numProductsToShow, setNumProductsToShow] = useState(20); // Number of products to display initially
-  const [numProductsToLoad, setNumProductsToLoad] = useState(20); // Number of products to load when clicking "Load More"
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-
-  const filteredProducts = selectedCategory
-  ? filterProductsByCategory(selectedCategory, productsData)
-  : productsData.slice(0, numProductsToShow);
-
-
-  const handleLoadMore = () => {
-    setNumProductsToShow((prevNum) => prevNum + numProductsToLoad);
-  };
-
+  
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -66,20 +48,9 @@ const Header =  (props) => {
     setSelectedCategory(null);
   };
 
-  const handleAddToCart = () => {
-    increaseCartCount();
-    setCartCount((prevCartCount) => prevCartCount + 1); // Update the cart count state
-    setShowAlert(true); // Show the success alert
-    setTimeout(() => setShowAlert(false), 3000);
-  };
-
-
-  // Check if there are more products to load
-  const hasMoreProducts = filteredProducts.length < productsData.length;
-
-  // Check if there are less than 20 products on the screen
-  const isLessThanTwenty = filteredProducts.length < 20;
-
+  const handleCartCountUpdate = () => {
+    setCartCount(getCartCount());
+  }
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
   <Typography variant="h6" sx={{ my: 2 }}>
@@ -178,33 +149,7 @@ const Header =  (props) => {
           {drawer}
         </Drawer>
       </Box>
-      {/* Render the filtered products using Grid */}
-      <Container id = "product-container">
-        <Grid container spacing={4} >
-          {filteredProducts.map(product => (
-            <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-              <ProductCard product={product} 
-              cartCount={cartCount} // Pass the cartCount state as prop
-              updateCartCount={handleAddToCart}/>
-            </Grid>
-          ))}
-        </Grid>
-        {hasMoreProducts && !isLessThanTwenty && (
-        <Button variant="contained" color="primary" onClick={handleLoadMore}>
-          Load More
-        </Button>
-      )}
-      </Container>
-      
-      {showAlert && ( // Show the alert conditionally
-        <Alert
-          id='alert'
-          severity="success"
-          onClose={() => setShowAlert(false)}
-        >
-          Item added to cart successfully!
-        </Alert>
-      )}  
+      <ProductGrid selectedCategory={selectedCategory} updateCartCount={handleCartCountUpdate} />
     </Box>
   );
   
