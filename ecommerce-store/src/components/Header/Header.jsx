@@ -38,9 +38,18 @@ const Header =  (props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
+   const [numProductsToShow, setNumProductsToShow] = useState(20); // Number of products to display initially
+  const [numProductsToLoad, setNumProductsToLoad] = useState(20); // Number of products to load when clicking "Load More"
+
+
   const filteredProducts = selectedCategory
   ? filterProductsByCategory(selectedCategory, productsData)
-  : productsData;
+  : productsData.slice(0, numProductsToShow);
+
+
+  const handleLoadMore = () => {
+    setNumProductsToShow((prevNum) => prevNum + numProductsToLoad);
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -64,6 +73,12 @@ const Header =  (props) => {
     setTimeout(() => setShowAlert(false), 3000);
   };
 
+
+  // Check if there are more products to load
+  const hasMoreProducts = filteredProducts.length < productsData.length;
+
+  // Check if there are less than 20 products on the screen
+  const isLessThanTwenty = filteredProducts.length < 20;
 
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
@@ -174,7 +189,13 @@ const Header =  (props) => {
             </Grid>
           ))}
         </Grid>
+        {hasMoreProducts && !isLessThanTwenty && (
+        <Button variant="contained" color="primary" onClick={handleLoadMore}>
+          Load More
+        </Button>
+      )}
       </Container>
+      
       {showAlert && ( // Show the alert conditionally
         <Alert
           id='alert'

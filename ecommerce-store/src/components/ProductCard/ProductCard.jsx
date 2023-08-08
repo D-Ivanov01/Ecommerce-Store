@@ -11,8 +11,7 @@ import ProductRating from '../ProductRating/ProductRating';
 import './ProductCard.css';
 
 
-const ProductCard = ({ product , cartCount, updateCartCount}) => {
-
+const ProductCard = ({ product , updateCartCount}) => {
   const [rating, setRating] = useState(() => {
     // Get the stored rating from local storage or set it to 0 if not available
     const storedRating = localStorage.getItem(`rating_${product.id}`);
