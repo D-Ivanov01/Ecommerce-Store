@@ -16,7 +16,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { filterProductsByCategory } from '../../services/product.service.js';
-import ProductCard from './ProductCard/ProductCard.jsx';
+import ProductCard from '../ProductCard/ProductCard.jsx';
 import productsData from '../../data/product.json'
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
@@ -25,6 +25,7 @@ import Badge from '@mui/material/Badge';
 import './Header.css'
 import { getCartCount } from '../../services/shoppingCart.services.js';
 import { increaseCartCount } from '../../services/shoppingCart.services.js';
+import Alert from '@mui/material/Alert';
 
 
 const drawerWidth = 250;
@@ -36,6 +37,7 @@ const Header =  (props) => {
   const [cartCount, setCartCount] = useState(getCartCount()); // Initialize with initial value
   const [mobileOpen, setMobileOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
   const filteredProducts = selectedCategory
   ? filterProductsByCategory(selectedCategory, productsData)
   : productsData;
@@ -58,6 +60,8 @@ const Header =  (props) => {
   const handleAddToCart = () => {
     increaseCartCount();
     setCartCount((prevCartCount) => prevCartCount + 1); // Update the cart count state
+    setShowAlert(true); // Show the success alert
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
 
@@ -171,6 +175,15 @@ const Header =  (props) => {
           ))}
         </Grid>
       </Container>
+      {showAlert && ( // Show the alert conditionally
+        <Alert
+          id='alert'
+          severity="success"
+          onClose={() => setShowAlert(false)}
+        >
+          Item added to cart successfully!
+        </Alert>
+      )}  
     </Box>
   );
   
