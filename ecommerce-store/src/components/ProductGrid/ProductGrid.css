@@ -19,6 +19,16 @@
     padding: 2rem 0;
 }
 
+#product-counter {
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #333;
+  }
+
 @media (max-width: 599px) {
     #product-container{
         max-width: 300px;

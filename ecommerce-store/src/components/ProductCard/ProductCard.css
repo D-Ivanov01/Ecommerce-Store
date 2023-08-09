@@ -3,6 +3,7 @@
     max-height: 250px; /* Set the maximum height of the image */
     object-fit: fill;
   }
+
   .add-to-basket {
         display: flex;
     justify-content: flex-end;
