@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ProductCard from '../ProductCard/ProductCard.jsx';
 import { filterProductsByCategory } from '../../services/product.service.js';
@@ -44,11 +45,14 @@ const ProductGrid = ({ selectedCategory, updateCartCount}) => {
           </Grid>
         ))}
       </Grid>
-      {hasMoreProducts && !isLessThanTwenty && (
+      <Box id='load-more'>
+{hasMoreProducts && !isLessThanTwenty && (
         <Button variant="outlined" color="inherit" onClick={handleLoadMore}>
           Load More
         </Button>
       )}
+      </Box>
+      
       {showAlert && (
         <Alert
           id='alert'
