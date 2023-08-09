@@ -1,0 +1,29 @@
+#product-container{
+    margin-top: 12rem;
+}
+
+#alert{
+    position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 599px) {
+    #product-container{
+        max-width: 300px;
+    }
+
+    #alert{
+      
+        bottom: auto;
+        top: 80px;
+        right: 16px;
+        border-radius: 4px;
+        font-size: 12px;
+        padding: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}

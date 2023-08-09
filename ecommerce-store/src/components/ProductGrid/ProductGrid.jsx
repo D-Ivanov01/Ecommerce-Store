@@ -7,7 +7,7 @@ import { increaseCartCount } from '../../services/shoppingCart.services.js';
 import { Container } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import productsData from '../../data/product.json'
-import { getCartCount } from '../../services/shoppingCart.services.js';
+import './ProductGrid.css'
 
 const ProductGrid = ({ selectedCategory, updateCartCount}) => {
   const [showAlert, setShowAlert] = useState(false);
