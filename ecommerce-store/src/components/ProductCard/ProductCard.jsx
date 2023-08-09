@@ -29,7 +29,8 @@ const ProductCard = ({ product , updateCartCount}) => {
   return (
     <Card id="product-cart" square>
       <CardMedia 
-      id='product-image '
+        id='product-image '
+        sx={{p:'10px'}}
         component="img"
         alt={`${product.brand} ${product.model}`}
         image={product.image} // Use the image URL from the product data
