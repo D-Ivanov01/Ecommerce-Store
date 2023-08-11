@@ -1,0 +1,37 @@
+.product-sorting-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10rem;
+    justify-content: flex-end;
+  }
+  
+  .sort-label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+  }
+  
+  .sort-select {
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s;
+  }
+  
+  .sort-select:hover {
+    background-color: #ffffff;
+  }
+  
+  .sort-select option {
+    font-size: 14px;
+  }
+  
