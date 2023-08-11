@@ -6,6 +6,7 @@ import { getCartCount } from './services/shoppingCart.services.js';
 import ProductSorting from './components/ProductSorting/ProductSorting';
 import ProductFiltering from './components/ProductFiltering/ProductFiltering'; // Import the new component
 import { Container, Grid } from '@mui/material';
+import Footer from './components/Footer/Footer.jsx';
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -37,7 +38,7 @@ const App = () => {
         cartCount={cartCount}
       />
       <Container>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           <Grid item xs={3}>
             {/* Include the ProductFiltering component */}
             <ProductFiltering onFilterChange={handleFilterChange} />
@@ -53,6 +54,7 @@ const App = () => {
           </Grid>
         </Grid>
       </Container>
+      <Footer/>
     </div>
   );
 };
