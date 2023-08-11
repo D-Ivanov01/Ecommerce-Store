@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductSorting.css';
 import SideBar from '../SideBar/SideBar';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import ProductFiltering from '../ProductFiltering/ProductFiltering';
 
 const ProductSorting = ({ onSortChange }) => {
     const [showSidebar, setShowSidebar] = useState(false);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   
     const handleSortChange = (event) => {
       const selectedSort = event.target.value;
@@ -14,6 +16,18 @@ const ProductSorting = ({ onSortChange }) => {
     const toggleSidebar = () => {
       setShowSidebar(!showSidebar);
     };
+
+    useEffect(() => {
+      const handleResize = () => {
+        setScreenWidth(window.innerWidth);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
   
     return (
       <div className="product-sorting-container">
@@ -45,6 +59,7 @@ const ProductSorting = ({ onSortChange }) => {
               <option value="price-asc">Price Ascending</option>
               <option value="price-desc">Price Descending</option>
             </select>
+           {screenWidth < 599 && <ProductFiltering />}
           </SideBar>
         </div>
       </div>

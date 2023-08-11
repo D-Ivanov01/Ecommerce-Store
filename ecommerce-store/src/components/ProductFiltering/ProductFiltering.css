@@ -25,7 +25,7 @@
     #filter-box {
         max-width: 200px; 
         margin: 0; 
-        padding-left: 5px;
+        padding-left: 6px;
     }
 
     /* Adjust Typography elements */
@@ -53,3 +53,21 @@
 
     
 }
+
+
+@media (max-width: 599px){
+    #product-filtering{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #filter-box {
+        max-width: 200px; 
+        margin: 0; 
+       padding-left: 30px
+
+    }
+};
