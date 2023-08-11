@@ -4,6 +4,7 @@ import Header from './components/Header/Header.jsx';
 import ProductGrid from './components/ProductGrid/ProductGrid.jsx';
 import { getCartCount } from './services/shoppingCart.services.js';
 import ProductSorting from './components/ProductSorting/ProductSorting';
+import { Container } from '@mui/material';
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -29,12 +30,15 @@ const App = () => {
         handleCategoryClick={handleCategoryClick}
         cartCount={cartCount}
       />
-      <ProductSorting onSortChange={handleSortChange} />
+      <Container>
+        <ProductSorting onSortChange={handleSortChange} />
       <ProductGrid
         selectedCategory={selectedCategory}
         updateCartCount={handleCartCountUpdate}
         sortOption={sortOption} // Pass the sorting option to ProductGrid
       />
+      </Container>
+      
     </div>
   );
 };
