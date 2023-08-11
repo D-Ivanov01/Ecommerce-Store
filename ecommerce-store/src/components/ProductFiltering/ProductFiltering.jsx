@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Box, Checkbox, Slider, FormControlLabel, FormGroup, Typography, Button} from '@mui/material';
+import { Box, Checkbox, Slider, FormControlLabel, FormGroup, Typography, Button, Paper} from '@mui/material';
 import './ProductFiltering.css'
 
 const ProductFiltering = ({ onFilterChange }) => {
@@ -30,14 +30,25 @@ const ProductFiltering = ({ onFilterChange }) => {
 
   return (
     <Box id="product-filtering" p={2}>
-      <Typography variant="h4">Filter By:</Typography>
+      <Paper id ='filter-box'>
+         <Typography variant="h4" className='filtering-category'>Filter By:</Typography>
       <FormGroup>
         {/* Color Filtering */}
         <Typography variant='h6' className='filtering-category'>Color:</Typography>
         <FormControlLabel
-          control={<Checkbox checked={colorFilters.includes('Languid Lavender')} onChange={handleColorChange} name="Languid Lavender" />}
-          label="Languid Lavender"
-        />
+  control={
+    <Checkbox
+      checked={colorFilters.includes('Languid Lavender')}
+      onChange={handleColorChange}
+      name="Languid Lavender"
+    />
+  }
+  label={
+    <Typography variant="body2" id="filtering-label">
+      Languid Lavender
+    </Typography>
+  }
+/>
         {/* Add more color checkboxes as needed */}
         
         {/* Price Range Filtering */}
@@ -49,13 +60,15 @@ const ProductFiltering = ({ onFilterChange }) => {
           min={0}
           max={2500}
         />
-        <Typography>Min: ${priceRange[0]} - Max: ${priceRange[1]}</Typography>
+        <Typography className='filtering-category'>Min: ${priceRange[0]} - Max: ${priceRange[1]}</Typography>
         
         {/* Apply Button */}
         <Button variant="contained" color="primary" onClick={applyFilters} id='filtering-button'>
           Apply Filters
         </Button>
       </FormGroup>
+      </Paper>
+     
     </Box>
   );
 };

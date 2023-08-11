@@ -9,3 +9,47 @@
 #filtering-button{
     margin-top: 1rem;
 }
+
+#filter-box{
+    display: flex;
+    padding: 24px 32px;
+    max-width: 256px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media (max-width: 850px) {
+    #filter-box {
+        max-width: 200px; 
+        margin: 0; 
+        padding-left: 5px;
+    }
+
+    /* Adjust Typography elements */
+    #filter-box .filtering-category {
+        font-size: 12px; 
+        margin-bottom: 0px; 
+    }
+
+    /* Adjust Slider */
+    #filter-box .MuiSlider-root {
+        width: 100%; 
+        
+    }
+
+    /* Adjust Button */
+    #filtering-button {
+        margin-top: 0px; 
+        font-size: 10px; 
+    }
+
+    #filtering-label {
+        font-size: 10px;
+      
+      }
+
+    
+}
