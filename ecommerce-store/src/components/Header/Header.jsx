@@ -17,8 +17,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import { getCartCount } from '../../services/shoppingCart.services.js';
-import ProductGrid from '../ProductGrid/ProductGrid.jsx';
 import './Header.css'
 
 
@@ -26,31 +24,18 @@ const drawerWidth = 250;
 const navItems = ['IOS', 'Android', 'EMUI'];
 
 
-const Header =  (props) => {
-  const { window } = props
-  const [cartCount, setCartCount] = useState(getCartCount());
-  const [selectedCategory, setSelectedCategory] = useState(null);
+const Header = (props) => {
+  const { window, handleCategoryClick, cartCount } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // Handle category selection
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-  };
-
-
-  // Handle logo click to reset the filtered data
   const handleLogoClick = () => {
-    setSelectedCategory(null);
+    handleCategoryClick(null); // Reset the category selection
+    setMobileOpen(false); // Close the drawer after clicking the logo
   };
-
-  const handleCartCountUpdate = () => {
-    setCartCount(getCartCount());
-  }
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
   <Typography variant="h6" sx={{ my: 2 }}>
@@ -139,7 +124,7 @@ const Header =  (props) => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -149,7 +134,6 @@ const Header =  (props) => {
           {drawer}
         </Drawer>
       </Box>
-      <ProductGrid selectedCategory={selectedCategory} updateCartCount={handleCartCountUpdate} />
     </Box>
   );
   
@@ -157,6 +141,9 @@ const Header =  (props) => {
 
 Header.propTypes = {
   window: PropTypes.func,
+  selectedCategory: PropTypes.string.isRequired,
+  handleCategoryClick: PropTypes.func.isRequired,
+  cartCount: PropTypes.number.isRequired,
 };
 
 export default Header
