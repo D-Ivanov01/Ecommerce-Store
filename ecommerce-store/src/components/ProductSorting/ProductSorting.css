@@ -56,13 +56,22 @@
     transform: translateY(40%);
   }
   
-  
+  @media (max-width: 850px){
+  .desktop-sorting{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -95px;
+  }
+}
+
+
 @media (max-width: 599px) {
     .mobile-sorting{
         display: flex;
       }
 
     .desktop-sorting{
-        display: none;
+        display: none !important;
     }
-}
+};
