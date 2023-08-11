@@ -14,3 +14,7 @@
     flex-wrap: nowrap;
     margin-top: -61px;
   }
+
+  #product-title{
+    font-size: 16px;
+  }

@@ -35,7 +35,7 @@ const ProductCard = ({ product, updateCartCount }) => {
         image={product.image}
       />
       <CardContent>
-        <Typography variant="h6">{product.brand} {product.model}</Typography>
+        <Typography id='product-title' variant="h6">{product.brand} {product.model}</Typography>
         <Typography variant="subtitle1" color="textSecondary">
           Price: ${product.price}
         </Typography>
