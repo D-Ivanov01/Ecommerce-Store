@@ -1,3 +1,11 @@
+ .desktop-sorting{
+    display: block;
+  }
+
+  .mobile-sorting{
+    display: none;
+  }
+
 .product-sorting-container {
     display: flex;
     align-items: center;
@@ -8,11 +16,12 @@
     margin-top: 10rem;
     justify-content: flex-end;
   }
-  
+ 
   .sort-label {
     font-size: 16px;
     color: #333;
     margin-right: 10px;
+    padding-top: 6rem;
   }
   
   .sort-select {
@@ -34,4 +43,26 @@
   .sort-select option {
     font-size: 14px;
   }
+
+  .sidebar-toggle-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    position: fixed;
+    bottom: 40%;
+    left: 1rem;
+    transform: translateY(40%);
+  }
   
+  
+@media (max-width: 599px) {
+    .mobile-sorting{
+        display: flex;
+      }
+
+    .desktop-sorting{
+        display: none;
+    }
+}
