@@ -32,7 +32,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div id = 'app-bg'>
       <Header
         selectedCategory={selectedCategory}
         handleCategoryClick={handleCategoryClick}
