@@ -11,16 +11,33 @@ import Alert from '@mui/material/Alert';
 import productsData from '../../data/product.json';
 import './ProductGrid.css';
 
-const ProductGrid = ({ selectedCategory, updateCartCount, sortOption }) => {
+const ProductGrid = ({ selectedCategory, updateCartCount, sortOption, filters }) => {
   const [showAlert, setShowAlert] = useState(false);
   const [numProductsToShow, setNumProductsToShow] = useState(20);
   const [numProductsToLoad, setNumProductsToLoad] = useState(20);
 
+  // Apply filters to the products
+  const applyFilters = (products) => {
+    let result = [...products];
+
+    if (filters.colors && filters.colors.length > 0) {
+      result = result.filter(product => filters.colors.includes(product.color));
+    }
+
+    if (filters.priceRange && filters.priceRange.length === 2) {
+      const [minPrice, maxPrice] = filters.priceRange;
+      result = result.filter(product => product.price >= minPrice && product.price <= maxPrice);
+    }
+
+    return result;
+  };
+
   const filteredProducts = selectedCategory
     ? filterProductsByCategory(selectedCategory, productsData)
     : productsData.slice(0, numProductsToShow);
-  // Copy the filtered products array and then sort it based on the sortOption
-  const sortedProducts = [...filteredProducts];
+
+  const sortedProducts = applyFilters(filteredProducts); // Apply filters to the products
+
   if (sortOption === 'alpha-asc') {
     sortedProducts.sort((a, b) => a.brand.localeCompare(b.brand));
   } else if (sortOption === 'alpha-desc') {
@@ -42,7 +59,7 @@ const ProductGrid = ({ selectedCategory, updateCartCount, sortOption }) => {
   };
 
   const handleLoadMore = () => {
-    setNumProductsToShow((prevNum) => prevNum + numProductsToLoad);
+    setNumProductsToShow(prevNum => prevNum + numProductsToLoad);
   };
 
   return (
@@ -67,11 +84,7 @@ const ProductGrid = ({ selectedCategory, updateCartCount, sortOption }) => {
       </Box>
 
       {showAlert && (
-        <Alert
-          id="alert"
-          severity="success"
-          onClose={() => setShowAlert(false)}
-        >
+        <Alert id="alert" severity="success" onClose={() => setShowAlert(false)}>
           Item added to cart successfully!
         </Alert>
       )}
@@ -80,8 +93,10 @@ const ProductGrid = ({ selectedCategory, updateCartCount, sortOption }) => {
 };
 
 ProductGrid.propTypes = {
-  selectedCategory: PropTypes.string, // Replace with appropriate prop type
+  selectedCategory: PropTypes.string,
   updateCartCount: PropTypes.func.isRequired,
-  sortOption: PropTypes.string, // Replace with appropriate prop type
+  sortOption: PropTypes.string,
+  filters: PropTypes.object.isRequired, // Add the filters prop type
 };
+
 export default ProductGrid;
