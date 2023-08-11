@@ -1,5 +1,5 @@
-import {React, useEffect, useState }from 'react';
-import PropTypes from 'prop-types'; 
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,10 +9,9 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ProductRating from '../ProductRating/ProductRating';
 import './ProductCard.css';
 
-
-const ProductCard = ({ product , updateCartCount}) => {
+const ProductCard = ({ product, updateCartCount }) => {
+  // Use React state to manage the rating
   const [rating, setRating] = useState(() => {
-    // Get the stored rating from local storage or set it to 0 if not available
     const storedRating = localStorage.getItem(`rating_${product.id}`);
     return storedRating ? parseFloat(storedRating) : 0;
   });
@@ -23,28 +22,32 @@ const ProductCard = ({ product , updateCartCount}) => {
   }, [rating, product.id]);
 
   const handleAddToCart = () => {
-    updateCartCount(); // Notify the parent component of the cart count update
+    updateCartCount();
   };
 
   return (
     <Card id="product-cart" square>
       <CardMedia 
-        id='product-image '
-        sx={{p:'10px'}}
+        id='product-image'
+        sx={{ p: '10px' }}
         component="img"
         alt={`${product.brand} ${product.model}`}
-        image={product.image} // Use the image URL from the product data
+        image={product.image}
       />
       <CardContent>
         <Typography variant="h6">{product.brand} {product.model}</Typography>
         <Typography variant="subtitle1" color="textSecondary">
-          Price: ${product.price} {/* Display the price with two decimal places */}
+          Price: ${product.price}
         </Typography>
         <ProductRating value={rating} onChange={setRating} />
       </CardContent>
       <div className="add-to-basket">
-        <IconButton aria-label='add to shopping cart' size='medium' onClick={handleAddToCart}>
-          <AddShoppingCartIcon  fontSize='small'/>
+        <IconButton
+          aria-label='add to shopping cart'
+          size='medium'
+          onClick={handleAddToCart}
+        >
+          <AddShoppingCartIcon fontSize='small' />
         </IconButton>
       </div>
     </Card>
@@ -55,4 +58,5 @@ ProductCard.propTypes = {
   product: PropTypes.object.isRequired,
   updateCartCount: PropTypes.func.isRequired,
 };
+
 export default ProductCard;
