@@ -1,0 +1,67 @@
+/* ProductDetailsPopup.css */
+
+/* Style for the popup content */
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: stretch;
+    padding: 16px;
+  }
+  
+  /* Style for the product title */
+  .product-title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  /* Style for the close button */
+  #close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+  
+  /* Style for the product image */
+  .product-image {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  
+  /* Style for product details */
+  .product-details {
+    margin-bottom: 16px;
+  }
+  
+  /* Style for the add to cart button */
+  .add-to-cart-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+
+ @media (max-width: 850px) {
+   /* Adjust the max-width for smaller screens */
+   #product-popUp .dialog-content {
+    max-width: 100%;
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  /* Adjust font size for smaller screens */
+  #product-popUp .product-title {
+    font-size: 1rem;
+  }
+  #product-popUp{
+  
+  }
+
+  .product-image {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+}

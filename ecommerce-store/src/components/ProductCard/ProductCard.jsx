@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { IconButton } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ProductRating from '../ProductRating/ProductRating';
+import ProductDetailsPopup from '../ProductDetailsPopup/ProductDetailsPopup';
 import './ProductCard.css';
 
 const ProductCard = ({ product, updateCartCount }) => {
@@ -18,11 +19,21 @@ const ProductCard = ({ product, updateCartCount }) => {
 
   useEffect(() => {
     // Store the rating in local storage whenever it changes
-    localStorage.setItem(`rating_${product.id}`, rating);
+    localStorage.setItem(`rating_${product.id}`, rating.toString()); // Convert rating to string
   }, [rating, product.id]);
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const handleAddToCart = () => {
     updateCartCount();
+  };
+
+  const handlePopupOpen = () => {
+    setIsPopupOpen(true);
+  };
+
+  const handlePopupClose = () => {
+    setIsPopupOpen(false);
   };
 
   return (
@@ -33,6 +44,7 @@ const ProductCard = ({ product, updateCartCount }) => {
         component="img"
         alt={`${product.brand} ${product.model}`}
         image={product.image}
+        onClick={handlePopupOpen} // Open popup when image is clicked
       />
       <CardContent>
         <Typography id='product-title' variant="h6">{product.brand} {product.model}</Typography>
@@ -50,6 +62,7 @@ const ProductCard = ({ product, updateCartCount }) => {
           <AddShoppingCartIcon fontSize='small' />
         </IconButton>
       </div>
+      {isPopupOpen && <ProductDetailsPopup product={product} onClose={handlePopupClose} onAddToCart={handleAddToCart} />}
     </Card>
   );
 };
