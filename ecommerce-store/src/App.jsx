@@ -7,6 +7,7 @@ import ProductSorting from './components/ProductSorting/ProductSorting';
 import ProductFiltering from './components/ProductFiltering/ProductFiltering'; // Import the new component
 import { Container, Grid } from '@mui/material';
 import Footer from './components/Footer/Footer.jsx';
+import './App.css'
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -37,7 +38,7 @@ const App = () => {
         handleCategoryClick={handleCategoryClick}
         cartCount={cartCount}
       />
-      <Container>
+      <Container className='custom-container'>
         <Grid container spacing={1}>
           <Grid item xs={3}>
             {/* Include the ProductFiltering component */}
