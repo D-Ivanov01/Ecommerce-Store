@@ -30,8 +30,9 @@ const ProductFiltering = ({ onFilterChange }) => {
 
   const colorOptions = [
     'Black', 'White', 'Gray', 'Blue', 'Green',
-    'Gold', 'Red' ,'Pink', 'Purple', 'Dark Green'
+    'Gold', 'Pink', 'Purple'
   ];
+  
 
   return (
     <Box id="product-filtering" p={2}>
