@@ -10,7 +10,7 @@
       "camera": "Triple 72MP",
       "operatingSystem": "Android 12",
       "battery": "5600 mAh",
-      "color": "Midnight Black",
+      "color": "Black",
       "image": "https://s13emagst.akamaized.net/products/43178/43177458/images/res_707ec7b89553b7311534089b62e447e9.jpg?width=720&height=720&hash=48AFB47805668749E7704C8DB1E28501"
     },
     {
@@ -24,7 +24,7 @@
       "camera": "Triple 108 MP Wide",
       "operatingSystem": "Android 12",
       "battery": "5000 mAh",
-      "color": "Malibu",
+      "color": "Blue",
       "image": "https://s13emagst.akamaized.net/products/54255/54254311/images/res_e7608bec5e4a57ae2c3f2f9b2683abd8.jpg?width=720&height=720&hash=A88C211C536E5B476C79DD672EE53779"
     },
     {
@@ -38,7 +38,7 @@
       "camera": "Triple 72 MP Wide",
       "operatingSystem": "iOS 16",
       "battery": "3200 mAh",
-      "color": "Dark Grey",
+      "color": "Grey",
       "image": "https://s13emagst.akamaized.net/products/48592/48591222/images/res_12362c60d3c74a4ac96f0ae792cf673b.jpg?width=720&height=720&hash=09657356F1E530DE333F224A09D667D5"
     },
     {
@@ -52,7 +52,7 @@
         "camera": "Dual 58 MP",
         "operatingSystem": "Android 12",
         "battery": "4500 mAh",
-        "color": "Tropical Rain Forest",
+        "color": "Green",
         "image": "https://s13emagst.akamaized.net/products/57133/57132827/images/res_590f81eba361782caa84a8513c7bf5a2.jpg?width=720&height=720&hash=52577A662F231C63E3BB6A2020F44136"
     },
     {
@@ -66,7 +66,7 @@
         "camera": "12 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "3000 mAh",
-        "color": "Mountbatten Pink",
+        "color": "Pink",
         "image": "https://s13emagst.akamaized.net/products/13571/13570823/images/res_2d17c305c39e721a81cbcc20ccfd9c88.jpg?width=720&height=720&hash=E5A6DE655501A59B226B1EBF9867790A"
     },
     {
@@ -108,7 +108,7 @@
         "camera": "Quad 108 MP",
         "operatingSystem": "MIUI 13",
         "battery": "5000 mAh",
-        "color": "Languid Lavender",
+        "color": "Pink",
         "image": "https://s13emagst.akamaized.net/products/44602/44601219/images/res_4dc5c8dcc32ae38d52468b46fcedb745.jpg?width=720&height=720&hash=BDED424ADD0DF97D4BAD244F81909B08"
     },
     {
@@ -122,7 +122,7 @@
         "camera": "Triple 130 MP",
         "operatingSystem": "Android 12",
         "battery": "5000 mAh",
-        "color": "Aurora Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/43178/43177472/images/res_c25f41d943c7479a79671915e7f8de8c.jpg?width=720&height=720&hash=F45FFF75639C91D036ED88D1B75541AD"
     },
     {
@@ -136,7 +136,7 @@
         "camera": "Triple 54 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "4500 mAh",
-        "color": "Ship Gray",
+        "color": "Gray",
         "image": "https://s13emagst.akamaized.net/products/50932/50931732/images/res_1475b769e2ac750899d07d5f3c34d3c4.jpg?width=720&height=720&hash=A26141CBC56DFAE1ACFAB6F610A100AD"
     },
     {
@@ -150,7 +150,7 @@
         "camera": "Dual 24 MP ",
         "operatingSystem": "iOS 16",
         "battery": "2400 mAh",
-        "color": "Midnight Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/25344/25343941/images/res_99d57ec9e3d9bb8d3242f384288ce0a3.jpg?width=720&height=720&hash=A4BC3CE224F32C303B0B287A5784D474"
     },
     {
@@ -164,7 +164,7 @@
         "camera": "Dual 24 MP",
         "operatingSystem": "Android 12",
         "battery": "3700 mAh",
-        "color": "Aurora Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/47877/47876437/images/res_a9ad18c858803c77f239e0abc958b3b9.jpg?width=720&height=720&hash=C9BA9183AAA201CC3E0FB3792E5789FC"
     },
     {
@@ -178,7 +178,7 @@
         "camera": "Triple 57 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "5000 mAh",
-        "color": "Ship Gray",
+        "color": "Gray",
         "image": "https://s13emagst.akamaized.net/products/54129/54128719/images/res_1ead99862ad5ddaa2dd84e4bef27361f.jpg?width=720&height=720&hash=A195069FC7B4A97398EB1E46EFD2BC4E"
     },
     {
@@ -192,7 +192,7 @@
         "camera": "13 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "5000 mAh",
-        "color": "Cosmic Blue",
+        "color": "Blue",
         "image": "https://s13emagst.akamaized.net/products/47867/47866080/images/res_2b8bd087be37c62aa568a1d406eac894.jpg?width=720&height=720&hash=0AE16CED98FD791CD11DE36AC63BFDBA"
     },
     {
@@ -206,7 +206,7 @@
         "camera": "Triple 150 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "4820 mAh",
-        "color": "Aurora Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/53699/53698477/images/res_fb7813e69007879f0084c7c8fa945994.jpg?width=720&height=720&hash=F18FD657D11E5828E273F1CCE46B254B"
     },
     {
@@ -220,7 +220,7 @@
         "camera": "Triple 60 MP Wide",
         "operatingSystem": "EMUI 12",
         "battery": "4500 mAh",
-        "color": "Starry Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/48773/48772987/images/res_b3f6f9c94c44e1af71529972d1c23cca.png?width=720&height=720&hash=E8EF40B6135F6A62A872340DC5AAB430"
     },
     {
@@ -248,7 +248,7 @@
         "camera": "Triple 60 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "4200 mAh",
-        "color": "Starry Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/29336/29335293/images/res_08544e0d63fdb000656bec5bb862b3e9.jpg?width=720&height=720&hash=947B17C14C0CD77D139E158E3EC46CF2"
     },
     {
@@ -276,7 +276,7 @@
         "camera": "Triple 67 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "5000 mAh",
-        "color": "Violet",
+        "color": "Purple",
         "image": "https://s13emagst.akamaized.net/products/54129/54128734/images/res_ad87c84a54cdb531cc87caf08cb457ad.jpg?width=720&height=720&hash=3520EEC1BE0285C272EDDE827B90FAA9"
     },
     {
@@ -290,7 +290,7 @@
         "camera": "50 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "4360 mAh",
-        "color": "Starry Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/42716/42715100/images/res_ac4d74675c346d083437d38467740d8f.jpg?width=720&height=720&hash=9567A6FD7B42EA719B305162AE90AFAC"
     },
     {
@@ -304,7 +304,7 @@
         "camera": "Triple 108 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "4500 mAh",
-        "color": "Aurora Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/54849/54848915/images/res_b731959f3649f39c179c5e86c0e6be57.jpg?width=720&height=720&hash=FDC2F3089949E29D6E76892826568628"
     },
     {
@@ -318,7 +318,7 @@
         "camera": "Triple 72 MP Wide",
         "operatingSystem": "Android 12",
         "battery": "4400 mAh",
-        "color": "Pearl Bush",
+        "color": "Gold",
         "image": "https://s13emagst.akamaized.net/products/47877/47876431/images/res_8aaf13ae50a7698c325e3c8540ede9bc.jpg?width=720&height=720&hash=626985F8A657CB541EB726160F6C3ED8"
     },
     {
@@ -332,7 +332,7 @@
         "camera": "Triple 72 MP Wide",
         "operatingSystem": "iOS 16",
         "battery": "3000 mAh",
-        "color": "Midnight Black",
+        "color": "Black",
         "image": "https://s13emagst.akamaized.net/products/48592/48591238/images/res_0e2cf7fc7c683b16fea2e86dbe98b8d9.jpg?width=720&height=720&hash=3959288467724EEC3E186C20D832A289"
     },
     {
@@ -346,7 +346,7 @@
         "camera": "Triple 75 MP Wide",
         "operatingSystem": "EMUI",
         "battery": "4800 mAh",
-        "color": "Dark Green",
+        "color": "Green",
         "image": "https://s13emagst.akamaized.net/products/56181/56180752/images/res_9b827672413f088deef7e68ef4d7e5b2.jpg?width=720&height=720&hash=2556451DBD8047136F420E952A457054"
     }
   ]
